@@ -1,0 +1,95 @@
+<html>
+<head>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chivo+Mono:wght@100&display=swap" rel="stylesheet">
+  <!-- <link rel="stylesheet" href="https://unpkg.com/transition-style"> -->
+
+  <script>
+    function navigate(url) {
+      window.location.replace(url);
+    }
+
+    function submit(event) {
+      event.preventDefault()
+      console.log('test', event);
+      console.log('hi')
+    }
+
+    function window_nav(url) {
+      window.open(url)
+    }
+
+    // document.getElementById('form').addEventListener('submit', function(event) {
+    //   event.preventDefault()
+    // })
+    </script>
+</head>
+
+<body transition-style="in:circle:top-left">
+  <div class="row" style="justify-content: flex-start">
+    <div onclick="navigate('./index.html')">
+      <a id="nav" class="nav">
+        <img src="./static/icons/home.png" alt="home" height="30" />
+      </a>
+    </div>
+    <div onclick="navigate('./resume.html')">
+      <a id="nav" class="nav">
+        <img src="./static/icons/resume.png" alt="projects" height="30" />
+      </a>
+    </div>
+    <div onclick="navigate('./gallery.html')">
+      <a id="nav" class="nav">
+        <img src="./static/icons/gallery.png" alt="gallery" height="30" />
+      </a>
+    </div>
+  </div>
+  <div class="page" id="main">
+    <h1>JOCELYN HSIEH</h1>
+    <h3>sophomore in cs + neuro @ harvard</h3>
+  </div>
+  <div class="page">
+    <h1 class="title"><em>ABOUT</em></h1>
+    <div class="row">
+      <div class="column" style="flex: 1">
+        <ul>
+          <li>Interested in computational neuroscience, machine learning, & software development, but currently exploring!</li>
+          <li>Originally from Texas & Iowa, now in Boston, Massachusetts</li>
+          <li>Likes learning classical music & pop arrangements on piano (is a washed up cellist)</li>
+          <li>Enjoys playing ultimate frisbee, crocheting, & doing assorted wordle games</li>
+          <li>Currier House!</li>
+        </ul>
+      </div>
+      <div class="column" style="flex: 1">
+        <img src="./static/images/profile.jpg" alt="joc on a roc" width="300"/>
+      </div>
+      <div class="column" style="flex: 1">
+        <h3>Contact</h3>
+        <form class="column" id="form">
+          <input type="text" placeholder="email" />
+          <textarea placeholder="questions & comments" rows="5"></textarea>
+          <div class="row">
+            <button type="submit" onclick="submit(event)">submit</button>
+          </div>
+        </form>
+        <div class="row">
+          <div id="social_media" onclick="window_nav('https:\//www.instagram.com/hsieh.jocelyn/')">
+            <img src="./static/icons/instagram.png" alt="instagram" width="20" />
+          </div>
+          <div id="social_media" onclick="window_nav('https:\//www.linkedin.com/in/jocelyn-hsieh-6736301b5/')">
+            <img src="./static/icons/linked_in.png" alt="linked in" width="20" />
+          </div>
+          <div id="social_media" onclick="window_nav('https:\//github.com/jhsieh731')">
+            <img src="./static/icons/github.png" alt="github" width="20" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer class="row">
+    <p>Last updated: December 24, 2022</p>
+    <p>Jocelyn Hsieh</p>
+  </footer>
+</body>
+</html>

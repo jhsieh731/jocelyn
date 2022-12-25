@@ -1,0 +1,49 @@
+<html>
+
+<head>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chivo+Mono:wght@100&display=swap" rel="stylesheet">
+  <!-- <link rel="stylesheet" href="https://unpkg.com/transition-style"> -->
+
+  <script>
+    function navigate(url) {
+      window.location.replace(url);
+    }
+
+    function window_nav(url) {
+      window.open(url)
+    }
+  </script>
+</head>
+
+<body transition-style="in:circle:top-left">
+  <div class="row" style="justify-content: flex-start">
+    <div onclick="navigate('./index.html')">
+      <a id="nav" class="nav">
+        <img src="./static/icons/home.png" alt="home" height="30" />
+      </a>
+    </div>
+    <div onclick="navigate('./resume.html')">
+      <a id="nav" class="nav">
+        <img src="./static/icons/resume.png" alt="projects" height="30" />
+      </a>
+    </div>
+    <div onclick="navigate('./gallery.html')">
+      <a id="nav" class="nav">
+        <img src="./static/icons/gallery.png" alt="gallery" height="30" />
+      </a>
+    </div>
+  </div>
+  <div class="page">
+    <h1 class="title">GALLERY</h1>
+  </div>
+  
+  <footer class="row">
+    <p>Last updated: December 24, 2022</p>
+    <p>Jocelyn Hsieh</p>
+  </footer>
+</body>
+
+</html>

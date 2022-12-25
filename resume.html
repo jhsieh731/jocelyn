@@ -1,0 +1,154 @@
+<html>
+
+<head>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chivo+Mono:wght@100&display=swap" rel="stylesheet">
+  <!-- <link rel="stylesheet" href="https://unpkg.com/transition-style"> -->
+
+  <script>
+    function navigate(url) {
+      window.location.replace(url);
+    }
+
+    function window_nav(url) {
+      window.open(url)
+    }
+  </script>
+</head>
+
+<body transition-style="in:circle:top-left">
+  <div class="row" style="justify-content: flex-start">
+    <div onclick="navigate('./index.html')">
+      <a id="nav" class="nav">
+        <img src="./static/icons/home.png" alt="home" height="30" />
+      </a>
+    </div>
+    <div onclick="navigate('./resume.html')">
+      <a id="nav" class="nav">
+        <img src="./static/icons/resume.png" alt="projects" height="30" />
+      </a>
+    </div>
+    <div onclick="navigate('./gallery.html')">
+      <a id="nav" class="nav">
+        <img src="./static/icons/gallery.png" alt="gallery" height="30" />
+      </a>
+    </div>
+  </div>
+  <div class="page row">
+    <div class="column" style="flex: 1"></div>
+    <div class="column" style="flex: 2">
+      <h1 class="title">RESUME</h1>
+      <h3><em>Work Experience</em></h3>
+      <ul style="align-self: flex-start">
+        <li> (Feb 2021-pres)
+          <a class="clean-link" onclick="window_nav('https:\//www.hsa.dev/')">HSA DEV</a>:
+          software engineer @ contract company for assorted start-ups & personal projects.
+          <ul>
+            <li>
+              <a class="clean-link" onclick="window_nav('https:\//trblomfield.wixsite.com/mysite')">Fluke</a>.
+              iOS app to find out when you happen to travel to the same location as a friend.
+              Made with React Native, Apollo/GraphQL, knex/objection.js, node, & AWS. Tech lead.
+            </li>
+            <li>Lollidoc (in production). Web app to book online dental appointments. Made with
+            React, Apollo/GraphQL, knex/objection.js, node. Software engineer. </li>
+          </ul>
+        </li>
+        <li> (August-December 2022)
+          <a class="clean-link" onclick="window_nav('https:\//cs50.harvard.edu/college/2022/fall/')">CS50 Teaching Fellow</a>:
+          led lab sections, office hours, & tutoring in an introductory computer science course. Taught &
+          graded problem sets on fundamental concepts & basics of C/Python/JS.
+        </li>
+      </ul>
+    </div>
+    <div class="column" style="flex: 1"></div>
+  </div>
+  <hr>
+  <div class="page">
+    <h3><em>Coursework</em></h3>
+    <div class="row" style="width: 100vw">
+      <div class="column" style="flex: 1">
+        <h4>Neuroscience</h4>
+        <ul>
+          <li>
+            Intro to Life Sciences: Chemistry, Molecular Biology, and Cell Biology (LS 1a).
+            <em>Fall 2021.</em>
+          </li>
+          <li>
+            Intro to Life Sciences: Genetics, Genomics, and Evolution (LS 1b).
+            <em>Spring 2022.</em>
+          </li>
+          <li>Neurobiology of Behavior (NEURO 80). <em>Fall 2022.</em></li>
+        </ul>
+      </div>
+      <div class="column" style="flex: 1">
+        <h4>Computer Science</h4>
+        <ul>
+          <li>
+            Intro to Computer Science (CS 50). <em>Fall 2021.</em>
+            Final project: <a onclick="window_nav('https:\//github.com/jhsieh731/Productivity')" class="clean-link">Productivity</a>.
+          </li>
+          <li>
+            Abstraction and Design in Computation (CS 51). <em>Spring 2022.</em>
+            Final project: MiniML, meta language processor written for OCaml in OCaml.
+          </li>
+          <li>Intro to Probability (STAT 110). <em>Fall 2022.</em></li>
+          <li>
+            Vector Calculus and Linear Algebra I (MATH 22a). <em>Fall 2022.</em>
+            Final project:
+            <a onclick="window_nav('https:\//github.com/jhsieh731/PCA_FacialRecog')" class="clean-link">PCA and Facial Recognition</a>.
+          </li>
+        </ul>
+      </div>
+      <div class="column" style="flex: 1">
+        <h4>Other</h4>
+        <ul>
+          <li>
+            Power to the People (GENED 1130). <em>Fall 2021.</em>
+            Final project:
+            <a onclick="window_nav('https:\//drive.google.com/file/d/1z2maeA2bmwfKSCqcdjKaQBPNmijJu3QF/view?usp=sharing')"
+            class="clean-link">Origins Zine</a>.
+          </li>
+          <li>Beginning Spanish I (SPAN 10). <em>Fall 2021</em></li>
+          <li>
+            Migratory Identities (FRSEM). <em>Spring 2022.</em>
+            Final project: <a onclick="window_nav('https:\//docs.google.com/document/d/1DgGAQ3XPY8pA9CRPwCYV1_DeV5t8Qlysmx9P6G9g6jk/edit?usp=sharing')"
+            class="clean-link">Narrative: A Something-American Search for Home</a>.
+          </li>
+          <li>
+            Immigration & Incarceration (EXPOS 20). <em>Spring 2022.</em>
+            Final project: <a onclick="window_nav('https:\//docs.google.com/document/d/1rn0FyEId4jjeBVnqYyO4eGd-UmqspoD5zihi5YJBuDU/edit?usp=sharing')"
+            class="clean-link">Research Paper: Comparison of Art at the US-Mexico Border</a>.
+          </li>
+          <li>Microeconomics (EC 10a). <em>Fall 2022.</em></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <hr>
+  <div class="page row">
+    <div class="column" style="flex: 1"></div>
+    <div class="column" style="flex: 1">
+      <h3><em>Skills</em></h3>
+      <ul>
+        <li>Languages.
+          <ul>
+            <li>Professional proficiency: English</li>
+            <li>Proficient: French, Mandarin Chinese</li>
+          </ul>
+        </li>
+        <li>
+          Programming Languages & Frameworks. React/JS, Flask/Python, OCaml, C.
+        </li>
+      </ul>
+    </div>
+    <div class="column" style="flex: 1"></div>
+  </div>
+  <footer class="row">
+    <p>Last updated: December 24, 2022</p>
+    <p>Jocelyn Hsieh</p>
+  </footer>
+</body>
+
+</html>
