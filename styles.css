@@ -2,7 +2,7 @@ body {
   font-family: 'Chivo Mono', monospace;
   color: white;
   background-color: #3a3b3c;
-  min-height: 100vh;
+  min-height: calc(100% - 20px);
   margin: 0;
 }
 
@@ -118,9 +118,9 @@ button {
 footer {
   background-color: #bbb;
   color: black;
-  margin-bottom: 0;
-  bottom: 0;
+  position: relative;
   height: 20px;
+  margin-bottom: 0px;
 }
 
 p {
@@ -138,4 +138,16 @@ p {
   color: #bbb;
   text-decoration: underline;
   cursor: pointer;
+}
+
+.control-button {
+  height: 50px;
+}
+
+#gallery-photo {
+  object-fit: cover;
+  object-position: center;
+  aspect-ratio: 1 / 1;
+  width: 30vw;
+  /* width: 300px; */
 }

@@ -5,7 +5,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Chivo+Mono:wght@100&display=swap" rel="stylesheet">
-  <!-- <link rel="stylesheet" href="https://unpkg.com/transition-style"> -->
 
   <script>
     function navigate(url) {
@@ -15,7 +14,103 @@
     function window_nav(url) {
       window.open(url)
     }
-  </script>
+
+    const images = [
+      {
+        img: 'fools.jpg',
+        cap: 'high school frisbee team: Fooligals',
+        tag: 'frisbee',
+      },
+      {
+        img: 'quasar.jpg',
+        cap: 'college frisbee team: Quasar',
+        tag: 'frisbee',
+      },
+      {
+        img: 'darkwing.png',
+        cap: 'summer 2022 club frisbee team: Darkwing',
+        tag: 'frisbee',
+      },
+      {
+        img: 'vice.png',
+        cap: 'summer 2022 club frisbee team: Vice',
+        tag: 'frisbee',
+      },
+      {
+        img: 'joc_cool.png',
+        cap: 'summer 2022 vice: I layout and look super cool in a photo for the first time ever',
+        tag: 'frisbee',
+      },
+      {
+        img: 'family.jpg',
+        cap: 'crochet family (winter 2022)',
+        tag: 'crochet',
+      },
+      {
+        img: 'family_asleep.jpg',
+        cap: 'my parents sent me pictures of their stuffed animals asleep :\')',
+        tag: 'crochet',
+      },
+      {
+        img: 'cardigan.jpg',
+        cap: 'crochet cardigan (summer 2022)',
+        tag: 'crochet',
+      },
+      {
+        img: 'prom.jpg',
+        cap: 'I went to prom my senior year (2021)!',
+        tag: 'life',
+      },
+      {
+        img: 'grad.jpg',
+        cap: 'graduated high school 2021',
+        tag: 'life',
+      },
+      {
+        img: 'homies.jpg',
+        cap: '4th of july fair with my friends',
+        tag: 'life',
+      },
+      {
+        img: 'ostrich.jpg',
+        cap: 'I fed an ostrich once (life-changing)',
+        tag: 'life',
+      },
+      {
+        img: 'seapupper.jpg',
+        cap: 'joc and some sea puppies (colorized)',
+        tag: 'life',
+      },
+    ]
+    document.addEventListener('DOMContentLoaded', function () {
+      let img = 12
+      document.getElementById('left').addEventListener('click', function () {
+        img = (img - 1) < 0 ? images.length - 1 : (img - 1)
+        const image_elt = document.getElementById('gallery-photo')
+        image_elt.src = './static/images/' + images[img].img
+        image_elt.alt = images[img].cap
+        document.getElementById('caption').innerHTML = images[img].cap
+
+        document.getElementById('left-cap').style.visibility = images[img].tag == 'frisbee' ? 'visible' : 'hidden'
+        document.getElementById('right-cap').style.visibility = images[img].tag == 'crochet' ? 'visible' : 'hidden'
+
+      })
+
+      document.getElementById('right').addEventListener('click', function () {
+        img = (img + 1) % (images.length)
+        console.log(img)
+        const image_elt = document.getElementById('gallery-photo')
+        image_elt.src = './static/images/' + images[img].img
+        image_elt.alt = images[img].cap
+        document.getElementById('caption').innerHTML = images[img].cap
+
+        document.getElementById('left-cap').style.visibility = images[img].tag == 'frisbee' ? 'visible' : 'hidden'
+        document.getElementById('right-cap').style.visibility = images[img].tag == 'crochet' ? 'visible' : 'hidden'
+      })
+
+
+    })
+    </script>
 </head>
 
 <body transition-style="in:circle:top-left">
@@ -38,12 +133,64 @@
   </div>
   <div class="page">
     <h1 class="title">GALLERY</h1>
+    <div class="row" style="align-items: center; justify-content: space-between">
+      <div class="column" id="left-cap" style="visibility: hidden; width: 30vw; padding: 0">
+        <h3>Frisbee Resume</h3>
+        <ul>
+          <li>
+            (2018-2021). LHS Fooligals.
+            <ul>
+              <li>2018: MA State Champions, 8th Place @ Nationals</li>
+              <li>2019: MA 2nd Place</li>
+              <li>*2021: MA 2nd place</li>
+            </ul>
+          </li>
+          <li>
+            (2021-pres). Harvard Quasar.
+            <ul>
+              <li>2022: 5th @ Sectionals, DNF Regionals</li>
+              <li>*2023: -current-</li>
+            </ul>
+          </li>
+          <li>
+            (2022). Darkwing: Practice player
+          </li>
+          <li>
+            (2022). Vice: Rostered!
+            <ul>
+              <li>3rd @ Sectionals</li>
+              <li>8th @ Regionals</li>
+            </ul>
+          </li>
+        </ul>
+        <p>*: captain</p>
+      </div>
+      <button class="control-button" type="button" id="left">
+        <img src="./static/icons/arrow.png" alt="left" height="25">
+      </button>
+      <div class="column" style="height: 70vh; padding: 0;">
+        <img id="gallery-photo" src="./static/images/seapupper.jpg" alt="joc and some sea puppies (colorized)">
+        <p id="caption" style="width: 30vw">joc and some sea puppies (colorized)</p>
+      </div>
+      <button class="control-button" type="button" id="right">
+        <img src="./static/icons/arrow.png" alt="right" height="25" style="transform: scaleX(-1)">
+      </button>
+      <div class="column" id="right-cap" style="visibility: hidden; width: 30vw; padding: 0">
+        <h3>Crochet Projects!</h3>
+        <ul>
+          <li>(2021-22 winter) Dinosaur for Val</li>
+          <li>(2021-22 winter) Sheep for Mom</li>
+          <li>(2021-22 winter) Giraffe for Dad</li>
+          <li>(2022 summer) Daisy Cardigan</li>
+        </ul>
+      </div>
+    </div>
   </div>
-  
+  <div class="page" style="height: 10vh">
+  </div>
   <footer class="row">
-    <p>Last updated: December 24, 2022</p>
+    <p>Last updated: December 27, 2022</p>
     <p>Jocelyn Hsieh</p>
   </footer>
 </body>
-
 </html>
