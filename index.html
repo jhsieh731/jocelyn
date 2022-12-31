@@ -11,20 +11,38 @@
       window.location.replace(url);
     }
 
-    function submit(event) {
-      event.preventDefault()
-      console.log('test', event);
-      console.log('hi')
-    }
-
     function window_nav(url) {
       window.open(url)
     }
 
-    // document.getElementById('form').addEventListener('submit', function(event) {
-    //   event.preventDefault()
-    // })
+    document.addEventListener('DOMContentLoaded', function () {
+      const form = document.getElementById('contact-form')
+      form.addEventListener('submit', function(event) {
+        event.preventDefault()
+        this.contact_number.value = Math.random() * 100000 | 0
+        // https://www.emailjs.com/docs/tutorial/creating-contact-form/
+        emailjs.sendForm('service_w6ypfgn', 'contact_form', this)
+          .then(function () {
+            console.log('SUCCESS!')
+          }, function (error) {
+            console.log('FAILED...', error)
+          });
+        form[1].value = ""
+        form[2].value = ""
+        form[3].value = ""
+
+      })
+    })
+    
     </script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function () {
+          // https://dashboard.emailjs.com/admin/account
+          emailjs.init('6Vqu-y4ZJByFgRU81');
+        })();
+    </script>
+
 </head>
 
 <body transition-style="in:circle:top-left">
@@ -66,11 +84,16 @@
       </div>
       <div class="column" style="flex: 1">
         <h3>Contact</h3>
-        <form class="column" id="form">
-          <input type="text" placeholder="email" />
-          <textarea placeholder="questions & comments" rows="5"></textarea>
+        <form class="column" id="contact-form">
+          <input type="hidden" name="contact_number">
+          <label>Name</label>
+          <input type="text" placeholder="name" name="user_name" required>
+          <label>Email</label>
+          <input type="text" placeholder="email" name="user_email" required/>
+          <label>Message</label>
+          <textarea name="message" placeholder="questions & comments" rows="5" required></textarea>
           <div class="row">
-            <button type="submit" onclick="submit(event)">submit</button>
+            <button type="submit" value="Send">submit</button>
           </div>
         </form>
         <div class="row">
@@ -87,10 +110,10 @@
       </div>
     </div>
   </div>
-  
+  <footer class="row">
+    <p>Last updated: December 27, 2022</p>
+    <p>Jocelyn Hsieh</p>
+  </footer>
 </body>
-<footer class="row">
-  <p>Last updated: December 27, 2022</p>
-  <p>Jocelyn Hsieh</p>
-</footer>
+
 </html>
