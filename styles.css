@@ -4,6 +4,19 @@ body {
   background-color: #3a3b3c;
   min-height: calc(100% - 20px);
   margin: 0;
+  animation: fadeInAnimation ease 2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
 
 textarea::placeholder,
@@ -11,27 +24,6 @@ input::placeholder {
   font-family: 'Chivo Mono', monospace;
   color: #3a3b3c;
   font-size: 12px;
-}
-
-@keyframes circle-in-top-left {
-  0% {
-    background-color: #3a3b3c;
-    clip-path: circle(0%);
-  }
-
-  50% {
-    background-color: #ddd;
-    clip-path: circle(125% at top left);
-  }
-
-  100% {
-    background-color: #3a3b3c;
-  }
-}
-
-
-[transition-style="in:circle:top-left"] {
-  animation: 1.5s cubic-bezier(.25, 1, .30, 1) circle-in-top-left;
 }
 
 
