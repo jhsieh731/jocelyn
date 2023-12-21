@@ -6,7 +6,8 @@ body {
   margin: 0;
 }
 
-textarea::placeholder, input::placeholder {
+textarea::placeholder,
+input::placeholder {
   font-family: 'Chivo Mono', monospace;
   color: #3a3b3c;
   font-size: 12px;
@@ -17,10 +18,12 @@ textarea::placeholder, input::placeholder {
     background-color: #3a3b3c;
     clip-path: circle(0%);
   }
+
   50% {
     background-color: #ddd;
     clip-path: circle(125% at top left);
   }
+
   100% {
     background-color: #3a3b3c;
   }
@@ -47,6 +50,14 @@ textarea::placeholder, input::placeholder {
   height: 60vh;
 }
 
+.rownav {
+  display: flex;
+  flex-direction: row;
+  /* width: 100vw; */
+  height: fit-content;
+  justify-content: space-between;
+}
+
 .nav {
   height: fit-content;
   margin: 30px;
@@ -62,9 +73,14 @@ textarea::placeholder, input::placeholder {
 .row {
   display: flex;
   flex-direction: row;
-  /* width: 100vw; */
   height: fit-content;
   justify-content: space-between;
+}
+
+@media (max-width: 800px) {
+  .row {
+    flex-direction: column;
+  }
 }
 
 .column {
@@ -152,4 +168,20 @@ p {
   aspect-ratio: 1 / 1;
   width: 30vw;
   /* width: 300px; */
+}
+
+.parent-window {
+  width: 60vw;
+}
+
+/* td {
+  background-color: red;
+} */
+
+#one {
+  background-color: green;
+}
+
+.row-one {
+  background-color: orange;
 }
