@@ -1,6 +1,7 @@
 <html>
 
 <head>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <title>Jocelyn Hsieh</title>
   <link rel="icon" type="image/x-icon" href="/static/icons/joc.png">
   <link rel="stylesheet" href="styles.css">
@@ -37,6 +38,11 @@
         <img src="./static/icons/gallery.png" alt="gallery" height="30" />
       </a>
     </div>
+    <div onclick="navigate('./projects.html')">
+      <a id="nav" class="nav">
+        <img src="./static/icons/lightbulb.png" alt="projects" height="30" />
+      </a>
+    </div>
   </div>
   <div class="page row">
     <div class="column" style="flex: 1"></div>
@@ -45,7 +51,7 @@
       <h3><em>Work Experience</em></h3>
       <ul style="align-self: flex-start">
         <li> (Feb 2022-Feb 2023)
-          <a class="clean-link" onclick="window_nav('https:\//www.hsa.dev/')">HSA DEV Software Enginner</a>:
+          <em>HSA DEV Software Engineer</em>:
           software engineer @ contract company for assorted start-ups & personal projects.
           <ul>
             <li>
@@ -65,21 +71,30 @@
           projects ranging from Flask web applications to JS game models.
         </li>
         <li> (September 2023 -December 2023.)
-          <a class="clean-link" onlick="window_nav('https://github.com/Harvard-CS-120/cs120')">CS120 Course Assistant</a>:
+          <a class="clean-link" onclick="window_nav('https\://github.com/Harvard-CS-120/cs120')">CS120 Course Assistant</a>:
           Graded weekly problem sets on introductory algorithmic techniques.
         </li>
         <li> (December 2023 -pres.)
-          <a class="clean-link" style="text-decoration:none">Execute Tech Lead</a>:
-          Created design files for a start-up geared toward consolidating acitivist events and tasks.
-          Implemented main site functionality as well as mobile-app functionality using React/GraphQL/objection/node.js. 
+          <a class="clean-link" style="text-decoration:none">Execute Software Developer Intern</a>:
+          Designed and implemented a platform for organizing activist movements and non-profits. Collaborated with founder to translate wireframes into visually appealing web-flows and screens through
+          Figma. Developed and maintained responsive user interfaces using React, utilized GraphQL to streamline data
+          fetching. Maintained a backend server through Node.js/express, designed and implemented database schemas in
+          PostgreSQL/objection.js. Utilized Git for version control, and Jira for managing collaboration with fellow engineers on a strict timeline.
         </li>
         <li> (April 2023 -pres.)
-          <a class="clean-link" onlick="window_nav('https://vnmurthylab.org/')">Murthy Lab Research
+          <a class="clean-link" onclick="window_nav('https\://vnmurthylab.org/')">Murthy Lab Research
             Assistant</a>:
           synthesized past research on gamma oscillations in the rodent olfactory bulb and developed a new
           model in Python,
           accounting for inhalation/exhalation timing. Worked with PhD candidate Ningjing Xia. Assisted in
-          behavioral training of mice for postdoctoral candidate Abby Finkelstein.
+          behavioral training of mice for postdoctoral candidate Abby Finkelstein. (Currently) Extended olfactory
+          datasets and developed neural network models to classify odors from chemical compounds.
+        </li>
+        <li> (April 2024 -pres.)
+          <a class="clean-link" onclick="window_nav('https\://scholar.harvard.edu/mikesmith/classes/cs-32-computational-thinking-and-problem-solving')">CS32 Teaching Fellow</a>:
+          Assisted weekly active learning sessions for students learning introductory Python, as well as weekly office hours.
+          Graded student homeworks, involving coding portions and concept checks. Worked with course instructors to provide 
+          the most instructive course experience for students.
         </li>
       </ul>
     </div>
@@ -108,7 +123,7 @@
               Variability in Female Cardinal Songs</a>
           </li>
           <li>Visual Recognition: Computational and Biophysical Perspective (NEURO 130). <em>Fall 2023.</em></li>
-          <li>*Biological and Artificial Intelligence. <em>Spring 2023.</em></li>
+          <li>*Biological and Artificial Intelligence. <em>Spring 2024.</em></li>
           <li>*Introduction to Neural Computation (NEURO 101Ua/b). <em>Fall 2023-Spring 2024.</em></li>
         </ul>
       </div>
@@ -153,9 +168,6 @@
           </li>
           <li>
             *Graph Theory and Combinatorics (AM 107). <em>Spring 2024.</em>
-          </li>
-          <li>
-            *Mathematical Modeling (AM 115). <em>Spring 2024.</em>
           </li>
         </ul>
       </div>
@@ -206,10 +218,6 @@
     </div>
     <div class="column" style="flex: 1"></div>
   </div>
-  <footer class="rownav">
-    <p>Last updated: August 28, 2023</p>
-    <p>Jocelyn Hsieh</p>
-  </footer>
 </body>
 
 </html>

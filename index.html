@@ -5,6 +5,7 @@
 <html lang="en">
 
 <head>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <title>Jocelyn Hsieh</title>
   <link rel="icon" type="image/x-icon" href="/static/icons/joc.png">
   <!-- bootstrp -->
@@ -36,10 +37,17 @@
         <img src="./static/icons/gallery.png" alt="gallery" height="30" />
       </a>
     </div>
+    <div onclick="navigate('./projects.html')">
+      <a id="nav" class="nav">
+        <img src="./static/icons/lightbulb.png" alt="projects" height="30" />
+      </a>
+    </div>
   </div>
   <div class="page" id="main">
     <h1>JOCELYN HSIEH</h1>
     <h3>junior in cs + neuro @ harvard</h3>
+    <p>See my <a class="clean-link"
+      onclick="window_nav('https:\//jocelynhsieh.notion.site/jocelynhsieh/e4b478151e624b81b87a301b429f367f?v=f4a1d266203d4a948cc164ab95fb882d')">blog</a>!</p>
   </div>
   <div class="page">
 
@@ -98,10 +106,6 @@
       </div>
     </div>
   </div>
-  <footer class="rownav">
-    <p>Last updated: August 28, 2023</p>
-    <p>Jocelyn Hsieh</p>
-  </footer>
 </body>
 
 

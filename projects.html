@@ -1,0 +1,100 @@
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Jocelyn Hsieh</title>
+  <link rel="icon" type="image/x-icon" href="/static/icons/joc.png">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chivo+Mono:wght@100&display=swap" rel="stylesheet">
+  <!-- <link rel="stylesheet" href="https://unpkg.com/transition-style"> -->
+
+  <script>
+    function navigate(url) {
+      window.location.replace(url);
+    }
+
+    function window_nav(url) {
+      window.open(url)
+    }
+  </script>
+</head>
+
+<body transition-style="in:circle:top-left">
+  <div class="rownav" style="justify-content: flex-start">
+    <div onclick="navigate('./index.html')">
+      <a id="nav" class="nav">
+        <img src="./static/icons/home.png" alt="home" height="30" />
+      </a>
+    </div>
+    <div onclick="navigate('./resume.html')">
+      <a id="nav" class="nav">
+        <img src="./static/icons/resume.png" alt="projects" height="30" />
+      </a>
+    </div>
+    <div onclick="navigate('./gallery.html')">
+      <a id="nav" class="nav">
+        <img src="./static/icons/gallery.png" alt="gallery" height="30" />
+      </a>
+    </div>
+    <div onclick="navigate('./projects.html')">
+      <a id="nav" class="nav">
+        <img src="./static/icons/lightbulb.png" alt="projects" height="30" />
+      </a>
+    </div>
+  </div>
+  <div class="page column">
+    <h1 class="title">PROJECTS</h1>
+    <ul style="align-self: flex-start">
+      <li> <em>Fluke.</em> A mobile app to stay in touch with friends while traveling, including
+        notifications when you're near a friend, messaging services, and GPS capabilities.
+        Created for a client while @ HSA DEV. Built with React-Native, GraphQL, knex/objection.js,
+        and a PostgreSQL database.
+      </li>
+      <div class="row" style="justify-content: space-around; margin: 10px">
+        <img class="project-img" src="./static/images/projects_fluke1.png" alt="Fluke location" height="400px" />
+        <img class="project-img" src="./static/images/projects_fluke2.png" alt="Fluke messages" height="400px" />
+      </div>
+      <li> <em>Lolllidoc.</em> A web app for a local dentist business to manage patient bookings,
+        forms, and communication through a central dashboard. Created for a client while @ HSA DEV in a
+        small engineering team, with collaboration with an in-house design team. Built with React, GraphQL,
+        knex/objection.js, and a PostgreSQL database.
+        <div class="row" style="justify-content: space-around; margin: 10px">
+          <img class="project-img" src="./static/images/projects_lollidoc.png" alt="Fluke location" height="400px" />
+          <img class="project-img" src="./static/images/projects_lollidoc2.png" alt="Fluke messages" height="400px" />
+        </div>
+      </li>
+      <li> <em>Olfactory Bulb Gamma Oscillation Modeling.</em>
+        <a class="clean-link"
+          onclick="window_nav('https://github.com/jhsieh731/23_research/blob/main/README.md')">Modeling Repository</a>:
+        Research project for the Murthy Lab during Summer 2023. Models of gamma oscillation bands found in the mouse
+        olfactory
+        bulb, based on a 1989 model. Expanded model through additional parameters in cortical input (constant),
+        amplitude of the
+        input through olfactory receptors, and mitral/granule connectivity patterns.
+      </li>
+      <li> <em>PyTorch Playground.</em>
+        <a class="clean-link" onclick="window_nav('https://github.com/jhsieh731/pytorch_playground')">Playground
+          Repository</a>:
+        Side project created during Summer 2022, to play around with PyTorch and varioius data science projects.
+        Trained on various free datasets, such as MNIST, GTSRB, and a Kaggle dataset to predict credit scores.
+      </li>
+      <li> <em>(WIP) Crochet Business Store.</em>
+        <a class="clean-link" onclick="window_nav('https\://github.com/jhsieh731/crochet')">Store Repository</a>:
+        Storefront for a crochet business, still in development. Built with Flask framework and MySQL database using
+        SQLAlchemy ORM.
+      </li>
+      <li> <em>(WIP) Execute.</em>
+        Web app in progress for a startup centered at organizing activists, using a social incentive.
+        Functionalities include event discovery, creation, and viewing of friends' recent activist activity.
+        <div class="row" style="justify-content: space-around; margin: 10px">
+          <img class="project-img" src="./static/images/projects_execute.png" alt="Execute event discovery" height="400px" />
+        </div>
+      </li>
+    </ul>
+  </div>
+  </div>
+</body>
+
+</html>
