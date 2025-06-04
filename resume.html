@@ -387,6 +387,13 @@
                     button.className = 'collapsible';
                     button.innerHTML = header.innerHTML;
                     button.style.color = 'white';
+                    // if in mobile:
+                    if (window.innerWidth > 768) {
+                        button.style.margin = 'auto';
+                        button.style.padding = 'auto';
+                        button.style.width = 'fit-content';
+                    }
+                    
 
                     // Find the content that follows the header
                     let content = document.createElement('div');

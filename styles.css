@@ -69,6 +69,7 @@ input::placeholder {
   justify-content: space-between;
 }
 
+
 @media only screen and (max-width: 800px) {
   .row {
     flex-direction: column;
@@ -108,6 +109,7 @@ input::placeholder {
   .parent-window {
     width: 90vw;
   }
+
 }
 
 .column {
