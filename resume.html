@@ -1,216 +1,435 @@
 <html>
 
 <head>
-  <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <title>Jocelyn Hsieh</title>
-  <link rel="icon" type="image/x-icon" href="/static/icons/joc.png">
-  <link rel="stylesheet" href="styles.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Chivo+Mono:wght@100&display=swap" rel="stylesheet">
-  <!-- <link rel="stylesheet" href="https://unpkg.com/transition-style"> -->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Jocelyn Hsieh</title>
+    <link rel="icon" type="image/x-icon" href="/static/icons/joc.png">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chivo+Mono:wght@100&display=swap" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="https://unpkg.com/transition-style"> -->
 
-  <script>
-    function navigate(url) {
-      window.location.replace(url);
-    }
+    <script>
+        function navigate(url) {
+            window.location.replace(url);
+        }
 
-    function window_nav(url) {
-      window.open(url)
-    }
-  </script>
+        function window_nav(url) {
+            window.open(url)
+        }
+    </script>
+    <style>
+        .collapsible {
+            background-color: transparent;
+            cursor: pointer;
+            padding: 10px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 1.17em;
+            font-style: italic;
+            font-weight: bold;
+            margin: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .collapsible:after {
+            content: '\002B';
+            font-weight: bold;
+            float: right;
+            margin-left: 5px;
+        }
+
+        .active:after {
+            content: "\2212";
+        }
+
+        .content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.2s ease-out;
+        }
+
+        @media screen and (min-width: 768px) {
+            .collapsible:after {
+                display: none;
+            }
+
+            .content {
+                max-height: none !important;
+                overflow: visible;
+            }
+        }
+
+        @media screen and (max-width: 767px) {
+
+            .page.row,
+            .row {
+                flex-direction: column;
+                width: 100% !important;
+                max-width: 100% !important;
+                margin: 0;
+                padding: 0;
+            }
+
+            .column {
+                flex: 1 !important;
+                width: 100% !important;
+                padding: 10px !important;
+                margin: 0 !important;
+                box-sizing: border-box;
+            }
+
+            body {
+                overflow-x: hidden;
+                width: 100%;
+                max-width: 100%;
+                margin: 0;
+                padding: 0;
+            }
+
+            .page {
+                width: 100% !important;
+                max-width: 100%;
+                padding: 10px;
+                margin: 0;
+                box-sizing: border-box;
+            }
+
+            ul {
+                padding-left: 20px;
+                margin-right: 10px;
+            }
+
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6 {
+                margin: 10px 0;
+            }
+
+            .rownav {
+                padding: 0 10px;
+                width: 100%;
+                box-sizing: border-box;
+            }
+        }
+    </style>
 </head>
 
 <body transition-style="in:circle:top-left">
-  <div class="rownav" style="justify-content: flex-start">
-    <div onclick="navigate('./index.html')">
-      <a id="nav" class="nav">
-        <img src="./static/icons/home.png" alt="home" height="30" />
-      </a>
+    <div class="rownav" style="justify-content: flex-start">
+        <div onclick="navigate('./index.html')">
+            <a id="nav" class="nav">
+                <img src="./static/icons/home.png" alt="home" height="30" />
+            </a>
+        </div>
+        <div onclick="navigate('./resume.html')">
+            <a id="nav" class="nav">
+                <img src="./static/icons/resume.png" alt="projects" height="30" />
+            </a>
+        </div>
+        <div onclick="navigate('./projects.html')">
+            <a id="nav" class="nav">
+                <img src="./static/icons/lightbulb.png" alt="projects" height="30" />
+            </a>
+        </div>
     </div>
-    <div onclick="navigate('./resume.html')">
-      <a id="nav" class="nav">
-        <img src="./static/icons/resume.png" alt="projects" height="30" />
-      </a>
+    <div class="page row">
+        <div class="column desktop-spacer" style="flex: 1"></div>
+        <div class="column" style="flex: 2">
+            <h1 class="title">RESUME</h1>
+            <h3><em>Work Experience</em></h3>
+            <ul style="align-self: flex-start">
+                <li> (June 2024-August 2024.)
+                    <a class="clean-link" onclick="window_nav('https\://www.zoominfo.com/')">Zoominfo Software
+                        Engineering Intern</a>:
+                    Completed a proof of concept utilizing a graph database (Neo4j) to manage core company data,
+                    handling millions of nodes
+                    and edges. Designed graph data model and implemented graph factorization techniques to optimize data
+                    loading and prevent
+                    deadlocks. Created an intuitive user interface to demonstrate key queries (in Cypher) using the
+                    graph database. Delivered a
+                    presentation of the database and demo to top executives and 100+ employees, highlighting the
+                    potential
+                    applications of graph technology.
+                <li> (April 2023-December 2024.)
+                    <a class="clean-link" onclick="window_nav('https\://vnmurthylab.org/')">Murthy Lab Research
+                        Assistant</a>:
+                    synthesized past research on gamma oscillations in the rodent olfactory bulb and developed a new
+                    model in Python,
+                    accounting for inhalation/exhalation timing. Worked with PhD candidate Ningjing Xia. Assisted in
+                    behavioral training of mice for postdoctoral fellow Abby Finkelstein. Extended olfactory
+                    datasets and developed neural network models to classify mixtures of odor mixturess from chemical
+                    compounds
+                    with postdoctoral fellow Farhad Pashakhanloo.
+                </li>
+
+                <li> (Feb 2022-Feb 2023.)
+                    <a class="clean-link" onclick="window_nav('https\://www.hsa.net/')">HSA DEV Software Engineer</a>:
+                    software engineer @ contract company for assorted start-ups & personal projects.
+                    <ul>
+                        <li>
+                            <a class="clean-link"
+                                onclick="window_nav('https:\//trblomfield.wixsite.com/mysite')">Fluke</a>.
+                            iOS app to find out when you happen to travel to the same location as a friend.
+                            Made with React Native, Apollo/GraphQL, knex/objection.js, node, & AWS. Primary engineer.
+                        </li>
+                        <li>Lollidoc (in production). Web app to book online dental appointments. Made with
+                            React, Apollo/GraphQL, knex/objection.js, node. Software engineer. </li>
+                    </ul>
+                </li>
+
+
+            </ul>
+            <hr>
+            <h3><em>Teaching Experience</em></h3>
+            <ul>
+                <li> (August 2024-Present.)
+                    <a class="clean-link"
+                        onclick="window_nav('https\://toc.seas.harvard.edu/links/am-107-graph-theory-and-combinatorics')">AM107
+                        Teaching Fellow</a>:
+                    Assisted in creating and grading weekly problem sets on graph theory and combinatorics. Led weekly
+                    office hours.
+                </li>
+                <li> (February 2024-May 2024.)
+                    <a class="clean-link"
+                        onclick="window_nav('https\://scholar.harvard.edu/mikesmith/classes/cs-32-computational-thinking-and-problem-solving')">CS32
+                        Teaching Fellow</a>:
+                    Assisted weekly active learning sessions for students learning introductory Python, as well as
+                    weekly office hours.
+                    Graded student homeworks, involving coding portions and concept checks. Worked with course
+                    instructors to provide
+                    the most instructive course experience for students.
+                </li>
+                <li> (September 2023-December 2023.)
+                    <a class="clean-link" onclick="window_nav('https\://github.com/Harvard-CS-120/cs120')">CS120 Course
+                        Assistant</a>:
+                    Graded weekly problem sets on introductory algorithmic techniques.
+                </li>
+                <li> (August-December 2022, August-December 2023, August-December 2024.)
+                    <a class="clean-link" onclick="window_nav('https:\//cs50.harvard.edu/college/2022/fall/')">CS50
+                        Teaching Fellow</a>:
+                    led lab sections, office hours, & tutoring in an introductory computer science course. Taught &
+                    graded problem sets on fundamental concepts & basics of C/Python/JS. Assisted students on final
+                    projects ranging from Flask web applications to JS game models.
+                </li>
+            </ul>
+        </div>
+        <div class="column desktop-spacer" style="flex: 1"></div>
     </div>
-    <div onclick="navigate('./gallery.html')">
-      <a id="nav" class="nav">
-        <img src="./static/icons/gallery.png" alt="gallery" height="30" />
-      </a>
+    <hr>
+    <div class="page">
+        <h3><em>Coursework</em></h3>
+        <div class="row" style="width: 100%; box-sizing: border-box;">
+            <div class="column" style="flex: 1">
+                <h4>Neuroscience</h4>
+                <ul>
+                    <li>
+                        Intro to Life Sciences: Chemistry, Molecular Biology, and Cell Biology (LS 1a).
+                        <em>Fall 2021.</em>
+                    </li>
+                    <li>
+                        Intro to Life Sciences: Genetics, Genomics, and Evolution (LS 1b).
+                        <em>Spring 2022.</em>
+                    </li>
+                    <li>Neurobiology of Behavior (NEURO 80). <em>Fall 2022.</em></li>
+                    <li>
+                        Systems Neuroscience (NEURO 105). <em>Spring 2023.</em>
+                        Final project: <a onclick="window_nav('https\://github.com/jhsieh731/neuro105_final')"
+                            class="clean-link">
+                            Variability in Female Cardinal Songs</a>
+                    </li>
+                    <li>Visual Recognition: Computational and Biophysical Perspective (NEURO 130). <em>Fall 2023.</em>
+                    </li>
+                    <li>Biological and Artificial Intelligence. <em>Spring 2024.</em></li>
+                    <li>Introduction to Neural Computation (NEURO 101Ua/b). <em>Fall 2023-Spring 2024.</em></li>
+                    <li>Evolutionary Biology (OEB 53). <em>Fall 2024.</em></li>
+                    <li>Supervised Reading and Research (CS91r). <em>Fall 2024.</em></li>
+                </ul>
+            </div>
+            <div class="column" style="flex: 1">
+                <h4>Computer Science</h4>
+                <ul>
+                    <li>
+                        Intro to Computer Science (CS 50). <em>Fall 2021.</em>
+                        Final project: <a onclick="window_nav('https:\//github.com/jhsieh731/Productivity')"
+                            class="clean-link">Productivity</a>.
+                    </li>
+                    <li>
+                        Abstraction and Design in Computation (CS 51). <em>Spring 2022.</em>
+                        Final project: MiniML, meta language processor written for OCaml in OCaml.
+                    </li>
+                    <li>Intro to Probability (STAT 110). <em>Fall 2022.</em></li>
+                    <li>
+                        Vector Calculus and Linear Algebra I (MATH 22a). <em>Fall 2022.</em>
+                        Final project:
+                        <a onclick="window_nav('https:\//github.com/jhsieh731/PCA_FacialRecog')" class="clean-link">PCA
+                            and Facial Recognition</a>.
+                    </li>
+                    <li>
+                        Introduction to Machine Learning (MIT 6.390). <em>Spring 2023.</em>
+                    </li>
+                    <li>
+                        Data Structures and Algorithms (CS 124). <em>Spring 2023.</em>
+                    </li>
+                    <li>
+                        Design of Useful and Usable Interactive Systems (CS 79). <em>Fall 2023.</em>
+                        Final project:
+                        <a onclick="window_nav('https:\//www.figma.com/file/VnibgCUnojAdbQifqbekzx/Project-3?type=design&node-id=0%3A1&mode=design&t=xGiFqgR04OQhc653-1')"
+                            class="clean-link">Simply Cambridge: A Cambridge Housing Portal</a>.
+                    </li>
+                    <li>
+                        Introduction to Theoretical Computer Science (CS 121). <em>Fall 2023.</em>
+                    </li>
+                    <li>
+                        Artificial Intelligence (CS 182). <em>Fall 2023.</em>
+                    </li>
+                    <li>
+                        Introduction to Statistical Inference (STAT 111). <em>Spring 2024.</em>
+                    </li>
+                    <li>
+                        Graph Theory and Combinatorics (AM 107). <em>Spring 2024.</em>
+                    </li>
+                    <li>
+                        Systems Programming and Machine Organization (CS 61). <em>Fall 2024.</em>
+                    </li>
+                    <li>
+                        Introduction to Distributed Computing (CS 262). <em>Spring 2025.</em>
+                        Final project: <a onclick="window_nav('https\://github.com/jhsieh731/262_final')"
+                            class="clean-link">Sharded Shopping Cart</a>.
+                    </li>
+                </ul>
+            </div>
+            <div class="column" style="flex: 1">
+                <h4>Other</h4>
+                <ul>
+                    <li>
+                        Power to the People (GENED 1130). <em>Fall 2021.</em>
+                        Final project:
+                        <a onclick="window_nav('https:\//drive.google.com/file/d/1z2maeA2bmwfKSCqcdjKaQBPNmijJu3QF/view?usp=sharing')"
+                            class="clean-link">Origins Zine</a>.
+                    </li>
+                    <li>Beginning Spanish I (SPAN 10). <em>Fall 2021</em></li>
+                    <li>
+                        Migratory Identities (FRSEM). <em>Spring 2022.</em>
+                        Final project: <a
+                            onclick="window_nav('https:\//docs.google.com/document/d/1DgGAQ3XPY8pA9CRPwCYV1_DeV5t8Qlysmx9P6G9g6jk/edit?usp=sharing')"
+                            class="clean-link">Narrative: A Something-American Search for Home</a>.
+                    </li>
+                    <li>
+                        Immigration & Incarceration (EXPOS 20). <em>Spring 2022.</em>
+                        Final project: <a
+                            onclick="window_nav('https:\//docs.google.com/document/d/1rn0FyEId4jjeBVnqYyO4eGd-UmqspoD5zihi5YJBuDU/edit?usp=sharing')"
+                            class="clean-link">Research Paper: Comparison of Art at the US-Mexico Border</a>.
+                    </li>
+                    <li>Microeconomics (EC 10a). <em>Fall 2022.</em></li>
+                    <li>Science of Stress (GENED 1162). <em>Spring 2023.</em></li>
+                    <li>Techno-Orientalism: Asia, Technology, Futurity (EMR 157). <em>Fall 2024.</em>
+                        Final project: <a
+                            onclick="window_nav('https\://docs.google.com/document/d/1R7-djSrCtZcZJA2Q7WA9vj0dPq4kvPfrZ5MC98vGiYw/edit?usp=sharing')"
+                            class="clean-link">Short Play: Time Block</a>.
+                    </li>
+                    <li>Classical Chinese Ethical and Political Theory (GENED 1091). <em>Fall 2024.</em></li>
+                    <li>
+                        The English Language Today, Yesterday, and Tomorrow (GENED 1183). <em>Spring 2025.</em>
+                    </li>
+                    <li>
+                        Introduction to Digital Fabrication (PS 70). <em>Spring 2025.</em>
+                        Documentation: <a onclick="window_nav('https\://jhsieh731.github.io/ps70/')"
+                            class="clean-link">Digital Fabrication Documentation</a>.
+                    </li>
+                </ul>
+            </div>
+        </div>
     </div>
-    <div onclick="navigate('./projects.html')">
-      <a id="nav" class="nav">
-        <img src="./static/icons/lightbulb.png" alt="projects" height="30" />
-      </a>
+    <hr>
+    <div class="page row">
+        <div class="column desktop-spacer" style="flex: 1"></div>
+        <div class="column" style="flex: 1">
+            <h3><em>Skills</em></h3>
+            <ul>
+                <li>Languages.
+                    <ul>
+                        <li>Professional proficiency: English</li>
+                        <li>Proficient: French, Mandarin Chinese</li>
+                    </ul>
+                </li>
+                <li>
+                    Programming Languages & Frameworks. React/JS, Flask/Python, SQL, OCaml, C, MATLAB.
+                </li>
+                <li>
+                    Education. Harvard College, A.B. in Computer Science and Neuroscience.
+                    <ul>
+                        <li>Academic awards: Phi Beta Kappa, Magna Cum Laude.</li>
+                        <li>Activities: Harvard Women's Ultimate Frisbee (captain), Taiwanese Cultural Society.</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="column desktop-spacer" style="flex: 1"></div>
     </div>
-  </div>
-  <div class="page row">
-    <div class="column" style="flex: 1"></div>
-    <div class="column" style="flex: 2">
-      <h1 class="title">RESUME</h1>
-      <h3><em>Work Experience</em></h3>
-      <ul style="align-self: flex-start">
-        <li> (Feb 2022-Feb 2023)
-          <em>HSA DEV Software Engineer</em>:
-          software engineer @ contract company for assorted start-ups & personal projects.
-          <ul>
-            <li>
-              <a class="clean-link" onclick="window_nav('https:\//trblomfield.wixsite.com/mysite')">Fluke</a>.
-              iOS app to find out when you happen to travel to the same location as a friend.
-              Made with React Native, Apollo/GraphQL, knex/objection.js, node, & AWS. Primary engineer.
-            </li>
-            <li>Lollidoc (in production). Web app to book online dental appointments. Made with
-              React, Apollo/GraphQL, knex/objection.js, node. Software engineer. </li>
-          </ul>
-        </li>
-        <li> (August-December 2022, August-December 2023)
-          <a class="clean-link" onclick="window_nav('https:\//cs50.harvard.edu/college/2022/fall/')">CS50
-            Teaching Fellow</a>:
-          led lab sections, office hours, & tutoring in an introductory computer science course. Taught &
-          graded problem sets on fundamental concepts & basics of C/Python/JS. Assisted students on final 
-          projects ranging from Flask web applications to JS game models.
-        </li>
-        <li> (September 2023 -December 2023.)
-          <a class="clean-link" onclick="window_nav('https\://github.com/Harvard-CS-120/cs120')">CS120 Course Assistant</a>:
-          Graded weekly problem sets on introductory algorithmic techniques.
-        </li>
-        <li> (April 2023 -pres.)
-          <a class="clean-link" onclick="window_nav('https\://vnmurthylab.org/')">Murthy Lab Research
-            Assistant</a>:
-          synthesized past research on gamma oscillations in the rodent olfactory bulb and developed a new
-          model in Python,
-          accounting for inhalation/exhalation timing. Worked with PhD candidate Ningjing Xia. Assisted in
-          behavioral training of mice for postdoctoral candidate Abby Finkelstein. (Currently) Extended olfactory
-          datasets and developed neural network models to classify odors from chemical compounds.
-        </li>
-        <li> (February 2024 -May 2024.)
-          <a class="clean-link" onclick="window_nav('https\://scholar.harvard.edu/mikesmith/classes/cs-32-computational-thinking-and-problem-solving')">CS32 Teaching Fellow</a>:
-          Assisted weekly active learning sessions for students learning introductory Python, as well as weekly office hours.
-          Graded student homeworks, involving coding portions and concept checks. Worked with course instructors to provide 
-          the most instructive course experience for students.
-        </li>
-      </ul>
-    </div>
-    <div class="column" style="flex: 1"></div>
-  </div>
-  <hr>
-  <div class="page">
-    <h3><em>Coursework</em></h3>
-    <h4>*: in progress</h4>
-    <div class="row" style="width: 100vw">
-      <div class="column" style="flex: 1">
-        <h4>Neuroscience</h4>
-        <ul>
-          <li>
-            Intro to Life Sciences: Chemistry, Molecular Biology, and Cell Biology (LS 1a).
-            <em>Fall 2021.</em>
-          </li>
-          <li>
-            Intro to Life Sciences: Genetics, Genomics, and Evolution (LS 1b).
-            <em>Spring 2022.</em>
-          </li>
-          <li>Neurobiology of Behavior (NEURO 80). <em>Fall 2022.</em></li>
-          <li>
-            Systems Neuroscience (NEURO 105). <em>Spring 2023.</em>
-            Final project: <a onclick="window_nav('https\://github.com/jhsieh731/neuro105_final')" class="clean-link">
-              Variability in Female Cardinal Songs</a>
-          </li>
-          <li>Visual Recognition: Computational and Biophysical Perspective (NEURO 130). <em>Fall 2023.</em></li>
-          <li>Biological and Artificial Intelligence. <em>Spring 2024.</em></li>
-          <li>Introduction to Neural Computation (NEURO 101Ua/b). <em>Fall 2023-Spring 2024.</em></li>
-        </ul>
-      </div>
-      <div class="column" style="flex: 1">
-        <h4>Computer Science</h4>
-        <ul>
-          <li>
-            Intro to Computer Science (CS 50). <em>Fall 2021.</em>
-            Final project: <a onclick="window_nav('https:\//github.com/jhsieh731/Productivity')"
-              class="clean-link">Productivity</a>.
-          </li>
-          <li>
-            Abstraction and Design in Computation (CS 51). <em>Spring 2022.</em>
-            Final project: MiniML, meta language processor written for OCaml in OCaml.
-          </li>
-          <li>Intro to Probability (STAT 110). <em>Fall 2022.</em></li>
-          <li>
-            Vector Calculus and Linear Algebra I (MATH 22a). <em>Fall 2022.</em>
-            Final project:
-            <a onclick="window_nav('https:\//github.com/jhsieh731/PCA_FacialRecog')" class="clean-link">PCA
-              and Facial Recognition</a>.
-          </li>
-          <li>
-            Introduction to Machine Learning (MIT 6.390). <em>Spring 2023.</em>
-          </li>
-          <li>
-            Data Structures and Algorithms (CS 124). <em>Spring 2023.</em>
-          </li>
-          <li>
-            Design of Useful and Usable Interactive Systems (CS 79). <em>Fall 2023.</em>
-            Final project:
-            <a onclick="window_nav('https:\//www.figma.com/file/VnibgCUnojAdbQifqbekzx/Project-3?type=design&node-id=0%3A1&mode=design&t=xGiFqgR04OQhc653-1')" class="clean-link">Simply Cambridge: A Cambridge Housing Portal</a>.
-          </li>
-          <li>
-            Introduction to Theoretical Computer Science (CS 121). <em>Fall 2023.</em>
-          </li>
-          <li>
-            Artificial Intelligence (CS 182). <em>Fall 2023.</em>
-          </li>
-          <li>
-            Introduction to Statistical Inference (STAT 111). <em>Spring 2024.</em>
-          </li>
-          <li>
-            Graph Theory and Combinatorics (AM 107). <em>Spring 2024.</em>
-          </li>
-        </ul>
-      </div>
-      <div class="column" style="flex: 1">
-        <h4>Other</h4>
-        <ul>
-          <li>
-            Power to the People (GENED 1130). <em>Fall 2021.</em>
-            Final project:
-            <a onclick="window_nav('https:\//drive.google.com/file/d/1z2maeA2bmwfKSCqcdjKaQBPNmijJu3QF/view?usp=sharing')"
-              class="clean-link">Origins Zine</a>.
-          </li>
-          <li>Beginning Spanish I (SPAN 10). <em>Fall 2021</em></li>
-          <li>
-            Migratory Identities (FRSEM). <em>Spring 2022.</em>
-            Final project: <a
-              onclick="window_nav('https:\//docs.google.com/document/d/1DgGAQ3XPY8pA9CRPwCYV1_DeV5t8Qlysmx9P6G9g6jk/edit?usp=sharing')"
-              class="clean-link">Narrative: A Something-American Search for Home</a>.
-          </li>
-          <li>
-            Immigration & Incarceration (EXPOS 20). <em>Spring 2022.</em>
-            Final project: <a
-              onclick="window_nav('https:\//docs.google.com/document/d/1rn0FyEId4jjeBVnqYyO4eGd-UmqspoD5zihi5YJBuDU/edit?usp=sharing')"
-              class="clean-link">Research Paper: Comparison of Art at the US-Mexico Border</a>.
-          </li>
-          <li>Microeconomics (EC 10a). <em>Fall 2022.</em></li>
-          <li>Science of Stress (GENED 1162). <em>Spring 2023.</em></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-  <hr>
-  <div class="page row">
-    <div class="column" style="flex: 1"></div>
-    <div class="column" style="flex: 1">
-      <h3><em>Skills</em></h3>
-      <ul>
-        <li>Languages.
-          <ul>
-            <li>Professional proficiency: English</li>
-            <li>Proficient: French, Mandarin Chinese</li>
-          </ul>
-        </li>
-        <li>
-          Programming Languages & Frameworks. React/JS, Flask/Python, SQL, OCaml, C, MATLAB.
-        </li>
-      </ul>
-    </div>
-    <div class="column" style="flex: 1"></div>
-  </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Convert existing h3 headers to collapsible buttons
+            const headers = document.querySelectorAll('h3');
+
+            headers.forEach(function (header) {
+                if (header.parentNode) {
+                    // Create a button with the same text
+                    const button = document.createElement('button');
+                    button.className = 'collapsible';
+                    button.innerHTML = header.innerHTML;
+                    button.style.color = 'white';
+
+                    // Find the content that follows the header
+                    let content = document.createElement('div');
+                    content.className = 'content';
+
+                    let nextElem = header.nextElementSibling;
+                    while (nextElem && nextElem.tagName !== 'H3' && nextElem.tagName !== 'HR') {
+                        const temp = nextElem.nextElementSibling;
+                        content.appendChild(nextElem);
+                        nextElem = temp;
+                    }
+
+                    // Replace header with button and content
+                    header.parentNode.insertBefore(button, header);
+                    header.parentNode.insertBefore(content, header);
+                    header.remove();
+                }
+            });
+
+            // Add click event to collapsible buttons
+            const collapsibles = document.querySelectorAll('.collapsible');
+
+            collapsibles.forEach(function (coll) {
+                coll.addEventListener('click', function () {
+                    this.classList.toggle('active');
+                    const content = this.nextElementSibling;
+
+                    if (content.style.maxHeight) {
+                        content.style.maxHeight = null;
+                    } else {
+                        content.style.maxHeight = content.scrollHeight + "px";
+                    }
+                });
+
+                // Check if it should start expanded on desktop
+                if (window.innerWidth >= 768) {
+                    coll.classList.add('active');
+                    const content = coll.nextElementSibling;
+                    content.style.maxHeight = content.scrollHeight + "px";
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>
