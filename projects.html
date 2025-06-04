@@ -29,7 +29,6 @@
             background-color: transparent;
             cursor: pointer;
             padding: 10px;
-            width: 100%;
             border: none;
             text-align: left;
             outline: none;
@@ -86,17 +85,15 @@
             ul {
                 padding-left: 0;
                 margin-right: 0;
-                width: 100%;
             }
 
             .project-item {
                 border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-                width: 100%;
+                width: fit-content;
             }
 
             body {
                 overflow-x: hidden;
-                width: 100%;
                 max-width: 100%;
                 margin: 0;
                 padding: 0;
@@ -125,9 +122,14 @@
     </div>
     <div class="page column">
         <h1 class="title">PROJECTS</h1>
-        <ul id="project-list" style="align-self: flex-start">
-            <!-- Project items will be converted to collapsible elements by JavaScript -->
-        </ul>
+        <div class="row">
+            <div style="flex: 1" class="desktop-spacer"></div>
+            <ul id="project-list" style="align-self: flex-start; flex: 2" >
+                <!-- Project items will be converted to collapsible elements by JavaScript -->
+            </ul>
+            <div style="flex: 1" class="desktop-spacer"></div>
+        </div>
+        
     </div>
 
     <script>
@@ -138,7 +140,7 @@
                     content: "A mobile app to stay in touch with friends while traveling, including notifications when you're near a friend, messaging services, and GPS capabilities. Created for a client while @ HSA DEV. Built with React-Native, GraphQL, knex/objection.js, and a PostgreSQL database."
                 },
                 {
-                    title: "Lolllidoc",
+                    title: "Lollidoc",
                     content: "A web app for a local dentist business to manage patient bookings, forms, and communication through a central dashboard. Created for a client while @ HSA DEV in a small engineering team, with collaboration with an in-house design team. Built with React, GraphQL, knex/objection.js, and a PostgreSQL database."
                 },
                 {
